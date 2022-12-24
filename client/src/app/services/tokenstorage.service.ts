@@ -31,9 +31,4 @@ export class TokenstorageService {
     localStorage.removeItem('name')
     localStorage.setItem('name', name)
   }
-
-  public logout() {
-    localStorage.removeItem(TOKEN_KEY)
-    localStorage.removeItem('name')
-  }
 }

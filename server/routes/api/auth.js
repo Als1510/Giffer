@@ -34,7 +34,7 @@ router.post('/register', [
     await user.save();
     res.json({ msg: "Registered Successfully!" })
   } catch (error) {
-    console.log(error.message)
+    console.error(error.message)
     res.status(500).send('Server Error!')
   }
 })
@@ -49,7 +49,6 @@ router.post('/login', [
   }
 
   const { email, password } = req.body;
-  console.log(req.body)
   try {
     let user = await User.findOne({ email })
     if (!user) {
