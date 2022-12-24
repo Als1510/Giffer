@@ -35,6 +35,12 @@ export class RegisterComponent implements OnInit {
     
     this._authService.register(name, email, password).subscribe((res)=>{
       this._utilityService.loader.next(false)
+      let msg = {
+        msg: res['msg'],
+        display: true,
+        status: 'success'
+      }
+      this._utilityService.alert.next(msg)
       this._router.navigate(['login'])
       this.registerForm.reset()
     })
