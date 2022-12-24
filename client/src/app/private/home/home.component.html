@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="header">
+    <p>Welcome, {{username}}</p>
+    <div class="search">
+      <input type="text" #search (keyup)="searchGif(search)" placeholder="Article name or keywords...">
+      <button>Search</button>
+    </div>
+    <a routerLink="/favourite">Favourites</a>
+  </div>
+  <div class="results" *ngIf="gifs.length>0">
+    <div class="card" *ngFor="let gif of gifs">
+      <img class="main_img" [src]="gif.images.original.url" alt="GIF">
+      <div class="img_footer">
+        <div class="img_info">
+          <p class="image_name">{{gif.title}}</p>
+          <h5 class="author">@{{gif.username}}</h5>
+        </div>
+        <img class="star" src="../../../assets/star.png" alt="" (click)="addFavourite(gif.images.original.url)">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.container{
+  position: fixed;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%,-95%);
+  width: 60%;
+  text-align: center;
+}
+
+p{
+  border-radius: 5px;
+  color: #fff;
+  padding: 0.3rem 0;
+}
+
+.success{
+  background-color:#3ad732;
+}
+
+.danger{
+  background-color:red;
+}
